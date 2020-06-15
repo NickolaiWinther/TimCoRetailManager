@@ -14,6 +14,11 @@ namespace TRMDataManager.Controllers
     {        
         [HttpGet]
         public UserModel GetById()
-         => new UserData().GetUserById(RequestContext.Principal.Identity.GetUserId()).First();
+        {
+            string userId = RequestContext.Principal.Identity.GetUserId();
+            UserData data = new UserData();
+
+            return data.GetUserById(userId).First();
+        }
     }
 }
