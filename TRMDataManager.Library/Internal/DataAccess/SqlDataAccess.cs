@@ -34,6 +34,7 @@ namespace TRMDataManager.Library.Internal.DataAccess
 
             using (IDbConnection cnn = new SqlConnection(connectionString))
             {
+#error NOT WORKING
                 cnn.Execute(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
             }
         }
